@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-mono: "DM Mono", monospace;
+  
+  --color-gold: #F5A623;
+  --color-offwhite: #F0EDE8;
+  --color-dark-bg: #0A0A0F;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-offwhite font-mono antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+.glass-card {
+  @apply bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl;
+}
+
+.gold-glow {
+  box-shadow: 0 0 20px rgba(245, 166, 35, 0.15);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #F5A623 0%, #D48806 100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+}
